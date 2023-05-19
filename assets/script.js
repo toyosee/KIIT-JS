@@ -27,7 +27,7 @@ Circle = function cal_circle(){
     const pi = 3.142;
     let result = pi * (value * value);
     Display.style.color= "green";
-    Display.innerHTML = ` Area of circle with radius ${value}  = ${result} `; 
+    Display.innerHTML = ` Area of circle with radius ${value}  = ${result}m² `; 
 }
 
 
@@ -37,7 +37,7 @@ Circumference = function circumference(){
     const pi = 3.142;
     let result = 2 * pi * value;
     Display.style.color= "green";
-    Display.innerHTML = ` Circumference of circle with radius ${value}  = ${result} `; 
+    Display.innerHTML = ` Circumference of circle with radius ${value}  = ${result}m `; 
 }
 
 // Calculating factorial
@@ -48,6 +48,21 @@ Factorial = function fact(){
     Display.style.color = 'green';
     Display.innerHTML = `${value} to power 4 = ${pow_four}`;
 }
+
+// Take an input and generate a password from it.
+Generate = function generate(){
+    let value = Value.value;
+    let store = 5;
+    let combinedText = value;
+
+    for(let i = 1; i < store; i++){
+        let randomNumber = Math.floor(Math.random()*10);
+        combinedText += randomNumber;
+    }
+    Display.style.color = 'green';
+    Display.innerHTML = `Your new password is ${combinedText}`;
+}
+
 
 // Function to change button value based on selected drop down value
 Btnvalue = function btn_value(){
@@ -66,7 +81,11 @@ Btnvalue = function btn_value(){
     else if(btnValue === 'circumference'){
         Btn.textContent = 'Circumference';
     }
+    else if(btnValue === 'generate'){
+        Btn.textContent = 'Generate';
+    };
 }
+
 
 // Function to handle button click
 Btnclick = function btn_clicked(){
@@ -87,6 +106,9 @@ Btnclick = function btn_clicked(){
     }
     else if(selectedValue === 'factorial'){
         Factorial()
+    }
+    else if(selectedValue === 'generate'){
+        Generate();
     };
 }
 
@@ -100,5 +122,5 @@ dropdown.addEventListener('click', Btnvalue)
 Btn.addEventListener('click', Btnclick);
 Btn.addEventListener('click', Clear);
 
-let greeting = "Yay Welcome to class";
-alert(greeting);
+//let greeting = "Yay Welcome to class";
+//alert(greeting);
