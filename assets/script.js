@@ -100,4 +100,5 @@ dropdown.addEventListener('click', Btnvalue)
 Btn.addEventListener('click', Btnclick);
 Btn.addEventListener('click', Clear);
 
-
+let greeting = "Yay Welcome to class";
+alert(greeting);
