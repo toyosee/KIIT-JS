@@ -4,6 +4,15 @@ const Display = document.getElementById('world');
 const Btn = document.getElementById('click');
 const dropdown = document.getElementById('myDropdown');
 
+
+// Function to style display
+Style = function color(){
+    styles = `color:green;
+                font-weight: bolder;
+                font-style: italic;`
+    Display.style= styles;
+}
+
 // function to handle temperature conversion
 Convert = function convert(){
     let error = "Please enter only Digit. 0 inclusive";
@@ -14,7 +23,7 @@ Convert = function convert(){
         Display.innerHTML = error
     } else{
         let convert = (value -32)/1.8;
-        Display.style.color= "green";
+        Style();
         Display.innerHTML = `${value} ${symbol}F = ${convert} ${symbol}C`; 
     }
 
@@ -26,7 +35,7 @@ Circle = function cal_circle(){
     let value = Number(Value.value);
     const pi = 3.142;
     let result = pi * (value * value);
-    Display.style.color= "green";
+    Style();
     Display.innerHTML = ` Area of circle with radius ${value}  = ${result}m² `; 
 }
 
@@ -36,17 +45,25 @@ Circumference = function circumference(){
     let value = Number(Value.value);
     const pi = 3.142;
     let result = 2 * pi * value;
-    Display.style.color= "green";
+    Style();
     Display.innerHTML = ` Circumference of circle with radius ${value}  = ${result}m `; 
 }
 
-// Calculating factorial
-
+// Calculating factorial of a number using for loop and if
 Factorial = function fact(){
     let value = Number(Value.value)
-    pow_four = Math.pow(value,4)
-    Display.style.color = 'green';
-    Display.innerHTML = `${value} to power 4 = ${pow_four}`;
+    if(value === 0 || value === 1){
+        value = 1;
+        Style();
+        Display.innerHTML = `${value}! = ${value}`;
+    }else{
+        let num = Number(Value.value);
+        for(i = value - 1; i >= 1; i-- ){
+            value *= i
+            Style();
+            Display.innerHTML = `${num}! = ${value}`;
+    }
+    }
 }
 
 // Take an input and generate a password from it.
@@ -59,7 +76,7 @@ Generate = function generate(){
         let randomNumber = Math.floor(Math.random()*10);
         combinedText += randomNumber;
     }
-    Display.style.color = 'green';
+    Style();
     Display.innerHTML = `Your new password is ${combinedText}`;
 }
 
@@ -69,7 +86,7 @@ Btnvalue = function btn_value(){
     let btnValue = dropdown.value
 
     if(btnValue === 'factorial'){
-        Btn.textContent = 'Power 4';
+        Btn.textContent = 'Factorial';
     }
     else if(btnValue === 'convert'){
         Btn.textContent = 'Convert';
@@ -83,6 +100,9 @@ Btnvalue = function btn_value(){
     }
     else if(btnValue === 'generate'){
         Btn.textContent = 'Generate';
+    }
+    else if(btnValue === '-'){
+        Btn.textContent = '-';
     };
 }
 
@@ -92,8 +112,10 @@ Btnclick = function btn_clicked(){
 
     //let inputValue = Number(Value.value)
     const selectedValue = dropdown.value;
-
-    if(selectedValue === "convert"){
+    if(selectedValue === '-'){
+        Btn.textContent = '-';
+    }
+    else if(selectedValue === "convert"){
         // Do something
         Convert();
     }
