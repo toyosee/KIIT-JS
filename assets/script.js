@@ -6,7 +6,7 @@ const dropdown = document.getElementById('myDropdown');
 
 
 // Function to style display
-Style = function color(){
+const Style = () => {
     styles = `color:green;
                 font-weight: bolder;
                 font-style: italic;`
@@ -14,7 +14,7 @@ Style = function color(){
 }
 
 // function to handle temperature conversion
-Convert = function convert(){
+const Convert = () => {
     let error = "Please enter only Digit. 0 inclusive";
     let value = Number(Value.value);
     let symbol = '\u00B0'
@@ -29,9 +29,8 @@ Convert = function convert(){
 
 }
 
-
 // Function to handle calculation of Area of circle
-Circle = function cal_circle(){
+const Circle = () => {
     let value = Number(Value.value);
     const pi = 3.142;
     let result = pi * (value * value);
@@ -41,7 +40,7 @@ Circle = function cal_circle(){
 
 
 // function for circumference of a circle
-Circumference = function circumference(){
+const Circumference = () =>{
     let value = Number(Value.value);
     const pi = 3.142;
     let result = 2 * pi * value;
@@ -50,7 +49,7 @@ Circumference = function circumference(){
 }
 
 // Calculating factorial of a number using for loop and if
-Factorial = function fact(){
+const Factorial = () => {
     let value = Number(Value.value)
     if(value === 0 || value === 1){
         value = 1;
@@ -66,8 +65,8 @@ Factorial = function fact(){
     }
 }
 
-// Take an input and generate a password from it.
-Generate = function generate(){
+// Take an input and generate a word and number.
+const Generate = () => {
     let value = Value.value;
     let store = 5;
     let combinedText = value;
@@ -82,7 +81,7 @@ Generate = function generate(){
 
 
 // Function to change button value based on selected drop down value
-Btnvalue = function btn_value(){
+const Btnvalue = () => {
     let btnValue = dropdown.value
 
     if(btnValue === 'factorial'){
@@ -108,7 +107,7 @@ Btnvalue = function btn_value(){
 
 
 // Function to handle button click
-Btnclick = function btn_clicked(){
+const Btnclick = () => {
 
     //let inputValue = Number(Value.value)
     const selectedValue = dropdown.value;
@@ -135,7 +134,7 @@ Btnclick = function btn_clicked(){
 }
 
 // Reset inout field function
-Clear = function clear_value(){
+const Clear = () => {
     Value.value = '';
 }
 
