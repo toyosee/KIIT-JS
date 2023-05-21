@@ -7,7 +7,7 @@ const dropdown = document.getElementById('myDropdown');
 
 // Function to style display
 const Style = () => {
-    styles = `color:green;
+    let styles = `color:green;
                 font-weight: bolder;
                 font-style: italic;`
     Display.style= styles;
