@@ -25,8 +25,8 @@ const Convert = () => {
     let value = Number(Value.value);
     let symbol = '\u00B0'
     if(isNaN(value)){
-        Display.style.color= "red";
-        Display.innerHTML = error
+        Style2();
+        Display.innerHTML = error;
     } else{
         let convert = (value -32)/1.8;
         Style();
@@ -58,9 +58,10 @@ const Circumference = () =>{
 const Factorial = () => {
     let value = Number(Value.value)
     if(value === 0 || value === 1){
+        let invalue = Value.value;
         value = 1;
         Style();
-        Display.innerHTML = `${value}! = ${value}`;
+        Display.innerHTML = `${invalue}! = ${value}`;
     }else{
         let num = Number(Value.value);
         for(i = value - 1; i >= 1; i-- ){
