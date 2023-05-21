@@ -5,12 +5,18 @@ const Btn = document.getElementById('click');
 const dropdown = document.getElementById('myDropdown');
 
 
-// Function to style display
+// Function to style display for success
 const Style = () => {
     let styles = `color:green;
                 font-weight: bolder;
                 font-style: italic;`
     Display.style= styles;
+}
+
+//Function to display style for Error
+const Style2 = () => {
+    let style = `color:red;`
+    Display.style = style;
 }
 
 // function to handle temperature conversion
@@ -73,13 +79,18 @@ const Generate = () => {
     let value = Value.value;
     let store = 5;
     let combinedText = value;
-
-    for(let i = 1; i < store; i++){
-        let randomNumber = Math.floor(Math.random()*10);
-        combinedText += randomNumber;
+    if(value === ''){
+        Style2();
+        Display.innerHTML = `<h1>Input can't be empty</h1>`;
     }
-    Style();
-    Display.innerHTML = `Your new password is ${combinedText}`;
+    else{
+        for(let i = 1; i < store; i++){
+            let randomNumber = Math.floor(Math.random()*10);
+            combinedText += randomNumber;
+        }
+        Style();
+        Display.innerHTML = `Your new password is ${combinedText}`;
+    }
 }
 
 
