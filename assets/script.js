@@ -58,9 +58,12 @@ const Factorial = () => {
     }else{
         let num = Number(Value.value);
         for(i = value - 1; i >= 1; i-- ){
-            value *= i
+            value *= i;
             Style();
-            Display.innerHTML = `${num}! = ${value}`;
+            let details = `<strong><a href="https://www.mathsisfun.com/numbers/factorial.html" target="_blank">Details</a></strong>`;
+            let learn = `click here ${details} to learn more about factorial`;
+            Display.innerHTML = `${num}! = ${value}  ${learn}`;
+            
     }
     }
 }
