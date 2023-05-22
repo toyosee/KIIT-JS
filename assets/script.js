@@ -90,7 +90,7 @@ const Generate = () => {
             combinedText += randomNumber;
         }
         Style();
-        Display.innerHTML = `Your new password is ${combinedText}`;
+        Display.innerHTML = `Your new username is ${combinedText}`;
     }
 }
 
