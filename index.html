@@ -19,7 +19,6 @@
                 <h1 class="card-header">Different Operations</h1>
                 <h5 class="card-title description">Choose an Operation</h5>
                 <select name="" id="myDropdown">
-                    <option value="-" selected>Select an Operation</option>
                     <option value="convert">Convert Temperature</option>
                     <option value="circle">Area of Circle</option>
                     <option value="circumference">Circumference</option>
@@ -29,10 +28,25 @@
                 <input type="text" id="value">
             </div>
             <div class="card-body">
-                <button id="click" type="submit" class="btn btn-primary btn-lg">Convert</button>
+                <button id="click" type="submit" class="btn btn-primary btn-lg">-</button>
             </div>
             <div class="card-footer text-muted">
                 <p><strong id="world"></strong></p>
+            </div>
+        </div>
+
+
+        <div class="card text-center">
+            <div class="card-body">
+                <h1 class="card-header">If Else and Switch</h1>
+                <h5 class="card-title description">Enter a number between 1 to 7 to count the days of the week</h5>
+                <input type="text" id="condition">
+            </div>
+            <div class="card-body">
+                <button id="condBtn" type="submit" class="btn btn-primary btn-lg">Check</button>
+            </div>
+            <div class="card-footer text-muted">
+                <p><strong id="output"></strong></p>
             </div>
         </div>
     </div>
@@ -40,5 +54,6 @@
  <script src="assets/script.js"></script>
  <!-- include the script -->
 <script src="assets/alertify.min.js"></script>
+<script src="assets/classwork.js"></script>
 </body>
 </html>

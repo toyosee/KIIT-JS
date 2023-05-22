@@ -114,9 +114,6 @@ const Btnvalue = () => {
     }
     else if(btnValue === 'generate'){
         Btn.textContent = 'Generate';
-    }
-    else if(btnValue === '-'){
-        Btn.textContent = '-';
     };
 }
 
@@ -126,10 +123,7 @@ const Btnclick = () => {
 
     //let inputValue = Number(Value.value)
     const selectedValue = Dropdown.value;
-    if(selectedValue === '-'){
-        Btn.textContent = '-';
-    }
-    else if(selectedValue === "convert"){
+    if(selectedValue === "convert"){
         // Do something
         Convert();
     }
