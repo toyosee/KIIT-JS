@@ -2,7 +2,7 @@
 const Value = document.getElementById('value');
 const Display = document.getElementById('world');
 const Btn = document.getElementById('click');
-const dropdown = document.getElementById('myDropdown');
+const Dropdown = document.getElementById('myDropdown');
 
 
 // Function to style display for success
@@ -97,7 +97,7 @@ const Generate = () => {
 
 // Function to change button value based on selected drop down value
 const Btnvalue = () => {
-    let btnValue = dropdown.value
+    let btnValue = Dropdown.value
 
     if(btnValue === 'factorial'){
         Btn.textContent = 'Factorial';
@@ -125,7 +125,7 @@ const Btnvalue = () => {
 const Btnclick = () => {
 
     //let inputValue = Number(Value.value)
-    const selectedValue = dropdown.value;
+    const selectedValue = Dropdown.value;
     if(selectedValue === '-'){
         Btn.textContent = '-';
     }
@@ -154,7 +154,7 @@ const Clear = () => {
 }
 
 // Adding event listiners to button
-dropdown.addEventListener('click', Btnvalue)
+Dropdown.addEventListener('click', Btnvalue)
 Btn.addEventListener('click', Btnclick);
 Btn.addEventListener('click', Clear);
 
