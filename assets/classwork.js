@@ -1,7 +1,9 @@
+// For the IF and Switch
 const InputField = document.getElementById('condition');
 const CheckBtn = document.getElementById('condBtn');
 const ResultDisplay = document.getElementById('output');
 
+// For the FOR loop
 const Entry = document.getElementById('counting');
 const CountBtn = document.getElementById('count');
 const CountDisplay = document.getElementById('preview');
