@@ -94,10 +94,9 @@ const Generate = () => {
     }
 }
 
-
 // Function to change button value based on selected drop down value
 const Btnvalue = () => {
-    let btnValue = Dropdown.value
+    let btnValue = Dropdown.value;
 
     if(btnValue === 'factorial'){
         Btn.textContent = 'Factorial';
@@ -154,3 +153,5 @@ Btn.addEventListener('click', Clear);
 
 //let greeting = "Yay Welcome to class";
 //alert(greeting);
+
+

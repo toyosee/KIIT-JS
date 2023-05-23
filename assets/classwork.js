@@ -70,7 +70,7 @@ const ForLoop = () => {
         for(let begin = 1; begin <= count; begin++){
             if(begin % 2 === 0){
                 collection.push(begin.toString());
-                const Finalcollection = collection.join('| ');
+                const Finalcollection = collection.join(', ');
                 CountDisplay.innerHTML = `Even numbers are : ${Finalcollection}`;
             }
         }
