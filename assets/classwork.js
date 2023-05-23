@@ -2,6 +2,10 @@ const InputField = document.getElementById('condition');
 const CheckBtn = document.getElementById('condBtn');
 const ResultDisplay = document.getElementById('output');
 
+const Entry = document.getElementById('counting');
+const CountBtn = document.getElementById('count');
+const CountDisplay = document.getElementById('preview');
+
 // Function to work with If Statement
 const ForIF = () => {
     let entry = InputField.value;
@@ -49,10 +53,33 @@ const ForSwitch = () => {
 
 // Reset input field
 const Reset = () => {
-    InputField.value = ""
+    InputField.value = "";
+    Entry.value = "";
+}
+
+// for loop
+const ForLoop = () => {
+    let count = Entry.value;
+    let collection = [];
+    if(count === ''){
+        CountDisplay.innerHTML = "Input field can not be empty";
+    }
+    else{
+        for(let begin = 1; begin <= count; begin++){
+            if(begin % 2 === 0){
+                collection.push(begin.toString());
+                const Finalcollection = collection.join('| ');
+                CountDisplay.innerHTML = `Even numbers are : ${Finalcollection}`;
+            }
+        }
+    }
+
 }
 
 // Adding event listener
 CheckBtn.addEventListener("click", ForSwitch);
 CheckBtn.addEventListener("click", Reset);
+
+CountBtn.addEventListener("click", ForLoop);
+CountBtn.addEventListener("click", Reset);
 
