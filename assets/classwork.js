@@ -2,6 +2,7 @@
 const InputField = document.getElementById('condition');
 const CheckBtn = document.getElementById('condBtn');
 const ResultDisplay = document.getElementById('output');
+const ForObject = document.getElementById('quick');
 
 // For the FOR loop
 const Entry = document.getElementById('counting');
@@ -78,10 +79,50 @@ const ForLoop = () => {
 
 }
 
+// Function to style button on mouse over
+const Over = () => {
+    let styles = `background: purple;
+                    font-size: 30px;`;
+    let notify = 'Touched';
+    CheckBtn.textContent = notify
+    CheckBtn.style = styles;
+}
+
+// Function to style button on mouse out
+const original = CheckBtn.textContent;
+const Out = () => {
+    let styles = `background: green`;
+    CheckBtn.textContent = original;
+    CheckBtn.style = styles;
+}
+
+
 // Adding event listener
 CheckBtn.addEventListener("click", ForSwitch);
+CheckBtn.addEventListener("mouseover", Over);
+CheckBtn.addEventListener("mouseout", Out);
 CheckBtn.addEventListener("click", Reset);
 
 CountBtn.addEventListener("click", ForLoop);
 CountBtn.addEventListener("click", Reset);
+
+// Function to demonstrate object and this key word
+const person = {
+    firstName:"Peter",
+    lastName: "Apostle",
+    age: "44",
+    father: ['yes', 'no'],
+    // got undefined when using an arrow function.
+    // use the function key word instead
+    about: function() {
+        let details = `${this.firstName}, ${this.lastName}, ${this.age}`;
+        return details;
+    }
+};
+
+const fullDetails = function() {
+    return ForObject.innerHTML = person.about();
+}
+// Calling the full details function
+fullDetails();
 
